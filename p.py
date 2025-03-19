@@ -58,7 +58,7 @@ def send_tcp():
 
 def attack_manager(protocol):
     threads = []
-    for _ in range(args['threads']):
+    for _ in range(args.threads):  # Diperbaiki: menggunakan args.threads
         t = threading.Thread(target=protocol)
         t.daemon = True
         t.start()
